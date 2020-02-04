@@ -1,0 +1,89 @@
+<template>
+<div class="page" data-name="booking">
+  <!-- <div class="navbar">
+    <div class="navbar-inner sliding">
+      <div class="left">
+        <a href="#" class="link back">
+          <i class="icon icon-back"></i>
+          <span class="if-not-md">Back</span>
+        </a>
+      </div>
+      <div class="title">Booking</div>
+    </div>
+  </div> -->
+    <div class="headerSection">
+        <a href="#" class="goBackLink back"><i class="fa fa-angle-left"></i></a>
+        <div class="headerLogo"></div>
+    </div>
+  <div class="page-content">
+    
+
+    <div class="fullPageBlock">
+        <div class="fullPageBlockInner">
+            <center><h1>Refund Policy</h1></center>
+
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            <br>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            <br>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        </div>        
+    </div>
+
+
+    <!--======= MENU ======= -->
+    <div class="menuSectionBottom">
+        <ul>
+            <!-- <li><a href="/"><span><img src="images/menuIcon1.svg" alt=""></span><strong>Home</strong></a></li>
+            <li><a href="/my-account/"><span><img src="images/menuIcon2.svg" alt=""></span><strong>Account</strong></a></li>
+            <li><a href="/my-booking/"><span><img src="images/menuIcon3.svg" alt=""></span><strong>Bookings</strong></a></li> -->
+            <li><a href="#" class="MenuBtnMain panel-open" data-panel="left"><span><img src="images/menuIcon4.svg" alt=""></span><strong></strong></a></li>
+        </ul>
+    </div>
+    
+    </div>
+  </div>
+</div>
+</template>
+<script>
+  return {
+      on: {
+            pageInit: function () {
+            $$('#bookingProcessFirst .booking1').on('click', function (e) {
+              var cleanerNeed = $$("input[name='cleaner-need']:checked"). val();
+              var instructions = $$('#bookingProcessFirst [name="instructions"]').val();
+              var cleanerNeedCnt = $$("input[name='cleaner-need-count']:checked"). val();
+              var cleaningMaterial = $$("input[name='cleaning-material']:checked"). val();
+
+              console.log(cleanerNeed, instructions, cleanerNeedCnt, cleaningMaterial);
+
+              window.localStorage.setItem("cleanerNeed", cleanerNeed);
+              window.localStorage.setItem("cleanerNeedCnt", cleanerNeedCnt);
+              window.localStorage.setItem("cleaningMaterial", cleaningMaterial);
+              window.localStorage.setItem("instructions", instructions);
+              // app.dialog.alert('Hii');
+              
+              if(cleanerNeed == ""){
+                  app.dialog.alert('Email Field required');
+                }
+                else if(cleanerNeedCnt == "")
+                {
+                  app.dialog.alert('cleaner Need Field required');
+                }
+                else if(cleaningMaterial == "")
+                {
+                  app.dialog.alert('Cleaning Material Field required');
+                }
+                else{
+                  mainView.router.navigate("/booking-date-time/");
+                }      
+
+              
+            });
+            }
+        }
+  }
+</script>
+
+
+   

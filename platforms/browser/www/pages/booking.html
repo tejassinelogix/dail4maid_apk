@@ -1,0 +1,190 @@
+<template>
+<div class="page" data-name="booking">
+  <!-- <div class="navbar">
+    <div class="navbar-inner sliding">
+      <div class="left">
+        <a href="#" class="link back">
+          <i class="icon icon-back"></i>
+          <span class="if-not-md">Back</span>
+        </a>
+      </div>
+      <div class="title">Booking</div>
+    </div>
+  </div> -->
+    <div class="headerSection">
+        <a href="#" class="goBackLink back"><i class="fa fa-angle-left"></i></a>
+        <div class="headerLogo"></div>
+    </div>
+  <div class="page-content">
+    
+
+    <div class="fullPageBlock">
+        <div class="fullPageBlockInner">
+            <!-- bookingProcess -->
+            <div class="bookingProcess">
+                <div class="bookingProcessCol bookingProcessColActive">
+                    <div><img src="images/check.svg"></div>
+                    <p>Cleaning Details</p>
+                </div>
+                <div class="bookingProcessCol">
+                    <div><a href="/booking-date-time/"></a></div>
+                    <p><a href="/booking-date-time/">Date & Time</a></p>
+                </div>
+                <div class="bookingProcessCol">
+                    <div></div>
+                     <p><a href="/booking-contact-details/">Contact Details</a></p>
+                </div>
+                <div class="bookingProcessCol">
+                    <div></div>
+                    <p><a href="/booking-payment/">Payment</a></p>
+                </div>
+            </div>
+            <div id="bookingProcessFirst" class="bookingProcessFirst">
+                <h3>How often do you need the cleaner?</h3>
+                <div class="radioCols">
+                    <label for="rdbtn1">
+                        <input type="radio" name="cleaner-need" value="One-off" id="rdbtn1" checked="checked">
+                        <span></span>
+                        <div>One-off</div>
+                    </label>
+                </div>
+                <div class="radioCols">
+                    <label for="rdbtn4">
+                        <input type="radio" name="cleaner-need" value="Every Day" id="rdbtn4">
+                        <span></span>
+                        <div>Every Day</div>
+                    </label>
+                </div>
+                <div class="radioCols">
+                    <label for="rdbtn2">
+                        <input type="radio" name="cleaner-need" value="Every two weeks" id="rdbtn2">
+                        <span></span>
+                        <div>Every two weeks</div>
+                    </label>
+                </div>
+                <div class="radioCols">
+                    <label for="rdbtn3">
+                        <input type="radio" name="cleaner-need" value="Every week" id="rdbtn3">
+                        <span></span>
+                        <div>Every week</div>
+                    </label>
+                </div>
+                <div class="space5"></div>
+                <h4>How many cleaners do you need?</h4>
+                <div class="numbersRadioBtn">
+                    <label for="rd1btn1">
+                        <input type="radio" name="cleaner-need-count" value="1" id="rd1btn1" checked="checked">
+                        <span></span>
+                        <div>1</div>
+                    </label>
+                    <label for="rd1btn2">
+                        <input type="radio" name="cleaner-need-count" value="2" id="rd1btn2">
+                        <span></span>
+                        <div>2</div>
+                    </label>
+                    <label for="rd1btn3">
+                        <input type="radio" name="cleaner-need-count" value="3" id="rd1btn3">
+                        <span></span>
+                        <div>3</div>
+                    </label>
+                    <label for="rd1btn4">
+                        <input type="radio" name="cleaner-need-count" value="4" id="rd1btn4">
+                        <span></span>
+                        <div>4</div>
+                    </label>
+                </div>
+                <div class="space5"></div>
+                <h4>Do you require cleaning materials?</h4>
+                <div class="inlineRadioBtns">
+                    <label for="inlineRdbtn1">
+                        <input type="radio" name="cleaning-material"  value="Yes" id="inlineRdbtn1" checked="checked">
+                        <span></span>
+                        <div>No, I have them</div>
+                    </label>
+                    <label for="inlineRdbtn2">
+                        <input type="radio" name="cleaning-material"  value="No" id="inlineRdbtn2">
+                        <span></span>
+                        <div>Yes, please</div>
+                    </label>
+                </div>
+                <div class="space5"></div>
+                <h4>Do you have any speciﬁc cleaning instructions?</h4>
+                <textarea rows="3" name="instructions" placeholder="Speciﬁc requirements"></textarea>
+                <div class="space5"></div>
+                <button type="submit" class="booking1 btn-primary btn-rounded pull-right" id="booking1" name="booking1">Next <i class="fa fa-sign-in"></i></button>
+            </div>
+
+            <!-- <form action="#" method="post" class="bookingForm1">                     -->
+                
+                
+                
+                
+                
+
+
+                <!-- <button type="submit" class="btn-primary btn-rounded pull-right"> 
+                    Next <i class="fa fa-arrow-circle-right"></i></button> -->
+                <!-- <button type="submit" class="btn-primary btn-rounded pull-right"> -->
+                  <!--   <a href="/booking-date-time/" class="btn-primary btn-rounded pull-right">Next <i class="fa fa-arrow-circle-right"></i></a> -->
+                <!-- </button> -->
+            <!-- </form> -->
+        </div>        
+    </div>
+
+
+    <!--======= MENU ======= -->
+    <div class="menuSectionBottom">
+        <ul>
+            <!-- <li><a href="/"><span><img src="images/menuIcon1.svg" alt=""></span><strong>Home</strong></a></li>
+            <li><a href="/my-account/"><span><img src="images/menuIcon2.svg" alt=""></span><strong>Account</strong></a></li>
+            <li><a href="/my-booking/"><span><img src="images/menuIcon3.svg" alt=""></span><strong>Bookings</strong></a></li> -->
+            <li><a href="#" class="MenuBtnMain panel-open" data-panel="left"><span><img src="images/menuIcon4.svg" alt=""></span><strong></strong></a></li>
+        </ul>
+    </div>
+    
+    </div>
+  </div>
+</div>
+</template>
+<script>
+  return {
+      on: {
+            pageInit: function () {
+            $$('#bookingProcessFirst .booking1').on('click', function (e) {
+              var cleanerNeed = $$("input[name='cleaner-need']:checked"). val();
+              var instructions = $$('#bookingProcessFirst [name="instructions"]').val();
+              var cleanerNeedCnt = $$("input[name='cleaner-need-count']:checked"). val();
+              var cleaningMaterial = $$("input[name='cleaning-material']:checked"). val();
+
+              console.log(cleanerNeed, instructions, cleanerNeedCnt, cleaningMaterial);
+
+              window.localStorage.setItem("cleanerNeed", cleanerNeed);
+              window.localStorage.setItem("cleanerNeedCnt", cleanerNeedCnt);
+              window.localStorage.setItem("cleaningMaterial", cleaningMaterial);
+              window.localStorage.setItem("instructions", instructions);
+              // app.dialog.alert('Hii');
+              
+              if(cleanerNeed == ""){
+                  app.dialog.alert('Email Field required');
+                }
+                else if(cleanerNeedCnt == "")
+                {
+                  app.dialog.alert('cleaner Need Field required');
+                }
+                else if(cleaningMaterial == "")
+                {
+                  app.dialog.alert('Cleaning Material Field required');
+                }
+                else{
+                  mainView.router.navigate("/booking-date-time/");
+                }      
+
+              
+            });
+            }
+        }
+  }
+</script>
+
+
+   

@@ -1,0 +1,84 @@
+<template>
+  <div class="page">
+    <div class="headerSection">
+        <a href="#" class="goBackLink back"><i class="fa fa-angle-left"></i></a>
+        <div class="headerLogo"></div>
+    </div>
+    <div class="page-content">
+      <div class="landingPage loginLandingPage">
+      <div class="block-title">Sign Up</div>
+        <div class="landingPageBgCol">
+            <div class="landingPageBg" style="background: url(images/loginPageBg.jpg) no-repeat center;"></div>
+        </div>
+        <div class="playBtnBlock">
+            <h3>Sign Up</h3>
+        </div>
+        <div class="loginSection">
+          <div id="signup-form">
+                <div class="loginField">
+                    <img src="images/user.svg" alt="">
+                    <input type="text" name="name" placeholder="Your name" required >
+                </div>
+                <div class="loginField">
+                    <img src="images/user.svg" alt="">
+                    <input type="text" name="mobile" placeholder="Your Contact Number" required >
+                </div>
+                <div class="loginField">
+                    <img src="images/user.svg" alt="">
+                    <input type="email" name="email" placeholder="Your e-mail" required >
+                </div>
+                <div class="loginField">
+                    <img src="images/key.svg" alt="">
+                    <input type="password" name="password" placeholder="Password" required >
+                </div>
+                <button type="submit" id="signUp" >Sign Up <i class="fa fa-sign-in"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</template>
+<script>
+  return {
+      on: {
+            pageInit: function () {
+              $$('#signUp').on('click', function (e) {
+
+                // app.dialog.alert('Sign Up Form');
+                // console.log("Sign Up Form");
+
+                var name = $$('#signup-form [name="name"]').val();
+                var email = $$('#signup-form [name="email"]').val();
+                var password = $$('#signup-form [name="password"]').val();
+                var c_password = $$('#signup-form [name="password"]').val();
+                var mobile = $$('#signup-form [name="mobile"]').val();
+
+                app.preloader.show();
+                // signup(name,email,password,mobile);
+
+                if(name == ""){
+                  app.dialog.alert('Name Field required');
+                }
+                else if(email == "")
+                {
+                  app.dialog.alert('Email Field required');
+                }
+                else if(password == ""){
+                  app.dialog.alert('Password Field required');
+                }
+                else if(mobile == "")
+                {
+                  app.dialog.alert('Contact Field required');
+                }
+                else{
+                  register(name,email,password,mobile);
+                }
+              
+                app.preloader.hide();
+
+              });
+          }
+        }
+  }
+</script>

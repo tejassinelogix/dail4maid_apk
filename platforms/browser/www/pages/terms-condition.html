@@ -1,0 +1,115 @@
+<template>
+<div class="page" data-name="booking">
+  <!-- <div class="navbar">
+    <div class="navbar-inner sliding">
+      <div class="left">
+        <a href="#" class="link back">
+          <i class="icon icon-back"></i>
+          <span class="if-not-md">Back</span>
+        </a>
+      </div>
+      <div class="title">Booking</div>
+    </div>
+  </div> -->
+    <div class="headerSection">
+        <a href="#" class="goBackLink back"><i class="fa fa-angle-left"></i></a>
+        <div class="headerLogo"></div>
+    </div>
+  <div class="page-content">
+    
+
+    <div class="fullPageBlock">
+        <div class="fullPageBlockInner">
+            <center><h1>Terms & Condition</h1></center>
+
+            <p>Http://www.dial4maid.com/Website ("Site") registered as “CARE TAKERS CLEANING SERVICES operates and manages an online platform at www.dial4maid.com through which a customer can book a home cleaning appointment by submitting a Booking Request.</p>
+
+<p>Welcome to CARE TAKERS CLEANING SERVICES Terms and Conditions Page. If you decide to continue to browse and use our website and services, you are completely agreeing to CARE TAKERS CLEANING SERVICES terms and conditions. The use of this website is subject but not limited to the below terms of use:</p>
+
+<p>The content of the pages of this website is for the explanation and implementation of our services. It is subject to change without notice.</p>
+
+<ol>
+ <li>CARE TAKERS CLEANING SERVICES keeps the right to change, amend, cancel or make exceptions to the terms and conditions listed here. By using our services, you acknowledge that you agree with our terms and conditions.</li>
+ <li>No partnership, joint venture, or agency is created as a result of the Terms and Conditions and you do not have any authority of any kind to link CARE TAKERS CLEANING SERVICES any respect whatsoever.</li>
+ <li>CARE TAKERS CLEANING SERVICES will not be liable for any failure to perform its obligations hereunder where such failure results arising from any reason beyond CARE TAKERS CLEANING SERVICES reasonable control, including, without limitation, electronic, mechanical or communications failure or degradation.</li>
+ <li>Your use of this website and any dispute arising out of such use of the website is subject to the local laws of UAE Main Courts.</li>
+ <li>Once cleaning assigned, the Cleaning Service Provider is permitted to accept or reject the Booking Request. Once Booked Services have been completed, CARE TAKERS CLEANING SERVICES issues an invoice to the Customer. Once issued, the Payment Service Provider collects payment of the Booked Service from the Customer.</li>
+ <li>CARE TAKERS CLEANING SERVICES keeps the right to change, amend, cancel or make exceptions to the terms and conditions listed here. Please check this terms and conditions page from time to time. By using our services, you acknowledge that you agree with our terms and conditions.</li>
+ <li>When you make a booking through CARE TAKERS CLEANING SERVICES, we will help facilitate the services for your clean. Once the clean is done the Fees you pay to our cleaner’s are non-refundable (unless there is a company-caused violation). The pricing scheme may be updated by the Company on a going-forward basis. You are liable for any and all taxes (except taxes based on our income)</li>
+ <li>CARE TAKERS CLEANING SERVICES will charge you for your finalized bookings through the payment method specified on the website (e.g. a credit card or cash). If you happen to pay any applicable charges with your credit card, we may seek pre-authorization of your credit card account prior to your purchase.</li>
+ <li>CARE TAKERS CLEANING SERVICES has the right to apply penalties to its cleaner in the case of damage to the houses or house interiors in order to protect the community. However, what happens to the client's belongings and house interiors during the cleaning session is solely the client's responsibility. CARE TAKERS CLEANING SERVICES is not responsible for houses and interiors during the process of getting into the house or getting out of the house. CARE TAKERS CLEANING SERVICES are not obliged to cover any damage(s) caused during the cleaning session.</li>
+ <li>CARE TAKERS CLEANING SERVICES may change rates and fees from time to time by posting the changes on the Dial4maid website 10 days in advance, but with no advance notice mandatory for temporary promotions or any changes that result in the reduction of rates and fees</li>
+ <li>If you choose to pay the fee by your credit card / debit card, you as the cardholder, must retain a copy of transaction records and our policies and rules.</li>
+ <li>You are responsible for maintaining the confidentiality of all the information in your account.</li>
+ <li>If you want to cancel your booking, you are required to give a minimum of 24 hours’ notice of cancellation. Notification must be in written format and to be sent to info@dial4maid.com. We reserve the right to levy a certain charge up to AED 100 cover any relevant administrative expenses.</li>
+ <li>Customers using the website who are minor/under the age of 18 shall not register as a User of the website and shall not transact on or use the website.</li>
+ <li>“United Arab of Emirates is our country of domicile” and stipulate that the governing law is the local law.</li>
+</ol>
+
+<p>CARE TAKERS CLEANING SERVICES will not trade with or provide any services to OFAC and sanctioned countries.</p>
+
+<p>Cardholder must retain a copy of transaction records and "CARE TAKERS CLEANING SERVICES" policies and rules</p>
+<p>CARE TAKERS CLEANING SERVICES will send messages via WhatsApp, SMS, email or notifications as means of communication for the purposes of including but not limited to appointment confirmation & appointment updates and marketing.</p>
+
+<b>Method of Payment, Card Types accepted and Currency</b>
+<p>We accept payments online using Visa, MasterCard, and Amex credit/debit card in AED</p>
+        </div>        
+    </div>
+
+
+    <!--======= MENU ======= -->
+    <div class="menuSectionBottom">
+        <ul>
+            <!-- <li><a href="/"><span><img src="images/menuIcon1.svg" alt=""></span><strong>Home</strong></a></li>
+            <li><a href="/my-account/"><span><img src="images/menuIcon2.svg" alt=""></span><strong>Account</strong></a></li>
+            <li><a href="/my-booking/"><span><img src="images/menuIcon3.svg" alt=""></span><strong>Bookings</strong></a></li> -->
+            <li><a href="#" class="MenuBtnMain panel-open" data-panel="left"><span><img src="images/menuIcon4.svg" alt=""></span><strong></strong></a></li>
+        </ul>
+    </div>
+    
+    </div>
+  </div>
+</div>
+</template>
+<script>
+  return {
+      on: {
+            pageInit: function () {
+            $$('#bookingProcessFirst .booking1').on('click', function (e) {
+              var cleanerNeed = $$("input[name='cleaner-need']:checked"). val();
+              var instructions = $$('#bookingProcessFirst [name="instructions"]').val();
+              var cleanerNeedCnt = $$("input[name='cleaner-need-count']:checked"). val();
+              var cleaningMaterial = $$("input[name='cleaning-material']:checked"). val();
+
+              console.log(cleanerNeed, instructions, cleanerNeedCnt, cleaningMaterial);
+
+              window.localStorage.setItem("cleanerNeed", cleanerNeed);
+              window.localStorage.setItem("cleanerNeedCnt", cleanerNeedCnt);
+              window.localStorage.setItem("cleaningMaterial", cleaningMaterial);
+              window.localStorage.setItem("instructions", instructions);
+              // app.dialog.alert('Hii');
+              
+              if(cleanerNeed == ""){
+                  app.dialog.alert('Email Field required');
+                }
+                else if(cleanerNeedCnt == "")
+                {
+                  app.dialog.alert('cleaner Need Field required');
+                }
+                else if(cleaningMaterial == "")
+                {
+                  app.dialog.alert('Cleaning Material Field required');
+                }
+                else{
+                  mainView.router.navigate("/booking-date-time/");
+                }      
+
+              
+            });
+            }
+        }
+  }
+</script>
+
+
+   

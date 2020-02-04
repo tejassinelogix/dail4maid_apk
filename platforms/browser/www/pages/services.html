@@ -1,0 +1,100 @@
+<template>
+<div class="page" data-name="services">
+  <!-- <div class="navbar">
+    <div class="navbar-inner sliding">
+      <div class="left">
+        <a href="#" class="link back">
+          <i class="icon icon-back"></i>
+          <span class="if-not-md">Back</span>
+        </a>
+      </div>
+      <div class="title">Booking</div>
+    </div>
+  </div> -->
+
+  <div class="headerSection">
+        <!-- <a href="#" class="goBackLink back"><i class="fa fa-angle-left"></i></a> -->
+        <div class="headerLogo"></div>
+    </div>
+  <div class="page-content">
+
+    <div class="fullPageBlock">
+        <div class="fullPageBlockInner">
+            <h3 class="heading"><span>Services</span></h3>
+
+            <!-- {{#each servicesData}}
+            <h6>{{service_cat_id}}</h6>
+            <h6>{{service_cat_name.en}}</h6>
+
+            {{/each}} -->
+            <div id="servicesRow">
+            {{#each servicesData}}
+            <div class="myServicesRow">
+              <div class="radioCols">
+                <label for="rdbtn{{service_cat_id}}">
+                        <input type="radio" name="service_id" value="{{service_cat_id}}" id="rdbtn{{service_cat_id}}">        
+                        <span></span>
+                        <div>{{service_cat_name.en}} - AED <strong>{{service_price}}</strong></div>
+                </label>
+                </div>     
+                <!--<a href="#" class="myServicesBlock">
+
+                    <div class="myBookingsDate">{{created_at}}</div>
+                    <div class="myServicesDesc">
+                        <!-- {{service_cat_id}}  <strong>{{service_cat_name.en}}</strong>-->
+                      <!--  AED <strong>{{service_price}}</strong>
+                    </div>
+                    <!-- <div class="myBookingsPrice">
+                        AED <strong>{{service_price}}</strong>
+                    </div> 
+                </a> -->
+
+            </div>
+            {{/each}}
+            <!-- <a href="#"  class="service-btn btn-primary btn-rounded" id="service-btn" name="service-btn">Book Now <i class="fa fa-arrow-right"></i></a> -->
+            <button type="submit" class="service1 btn-primary btn-rounded pull-right" id="service1" name="service1">Book Now <i class="fa fa-sign-in"></i></button>
+            </div>
+        </div>        
+    </div>
+
+
+    <!--======= MENU ======= -->
+    <div class="menuSectionBottom">
+        <ul>
+            <!-- <li><a href="/"><span><img src="images/menuIcon1.svg" alt=""></span><strong>Home</strong></a></li>
+            <li><a href="/my-account/"><span><img src="images/menuIcon2.svg" alt=""></span><strong>Account</strong></a></li>
+            <li><a href="/my-booking/"><span><img src="images/menuIcon3.svg" alt=""></span><strong>Bookings</strong></a></li> -->
+            <li><a href="#" class="MenuBtnMain panel-open" data-panel="left"><span><img src="images/menuIcon4.svg" alt=""></span><strong></strong></a></li>
+        </ul>
+    </div>
+
+
+   </div>
+  </div>
+</div>
+</template>
+<script>
+  return {
+      on: {
+            pageInit: function () {
+            $$('#servicesRow .service1').on('click', function (e) {
+              // app.dialog.alert('Hii');
+
+              var service_id = $$("input[name='service_id']:checked"). val();
+              
+              console.log(service_id);
+              window.localStorage.setItem("service_id", service_id);
+
+              if(typeof service_id === "undefined"){
+                  app.dialog.alert('Please select service');
+                }
+                else{
+				mainView.router.navigate("/booking/");              
+                  
+                }
+              
+            });
+            }
+        }
+  }
+</script>

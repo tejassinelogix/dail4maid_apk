@@ -1,0 +1,152 @@
+<template>
+<div class="page" data-name="booking">
+  <!-- <div class="navbar">
+    <div class="navbar-inner sliding">
+      <div class="left">
+        <a href="#" class="link back">
+          <i class="icon icon-back"></i>
+          <span class="if-not-md">Back</span>
+        </a>
+      </div>
+      <div class="title">Booking</div>
+    </div>
+  </div> -->
+
+  <div class="headerSection">
+        <a href="#" class="goBackLink back"><i class="fa fa-angle-left"></i></a>
+        <div class="headerLogo"></div>
+    </div>
+  <div class="page-content">
+    
+    <div class="fullPageBlock">
+        <div class="fullPageBlockInner">
+            <!-- bookingProcess -->
+            <div class="bookingProcess">
+                <div class="bookingProcessCol">
+                    <div></div>
+                    <p><a href="/booking/">Cleaning Details</a></p>
+                </div>
+                <div class="bookingProcessCol">
+                    <div></div>
+                    <p><a href="/booking-date-time/">Date & Time</a></p>
+                </div>
+                <div class="bookingProcessCol">
+                    <div></div>
+                    <p><a href="/booking-contact-details/">Contact Details</a></p>
+                </div>
+                <div class="bookingProcessCol bookingProcessColActive">
+                    <div><img src="images/check.svg"></div>
+                    <p><a href="/booking-payment/">Payment</a></p>
+                </div>
+            </div>
+            <div id="bookingProcessFourth">
+                <h3>How would you like to pay?</h3>
+                <div class="radioCols radioColsWithImg">
+                    <label for="paymentRdBtn1">
+                        <input type="radio" name="pay-with-card" value="Pay With Card" id="paymentRdBtn1" checked="checked">
+                        <span></span>
+                        <div>Pay by credit / debit card <img src="images/visa-card.png" alt="" class="visacard"></div>
+                    </label>
+                </div>
+                <div class="space5"></div>
+                <div class="contactDtlsFields">
+                    <img src="images/formIcon6.svg" alt="">
+                    <input type="number" name="card-number" placeholder="Card Number (0000 0000 0000 0000)">
+                </div>
+                <div class="contactDtlsFields contactDtlsFieldsHalfCol">
+                    <input type="number" name="expiry-date" placeholder="Expiry Date (MM / YY)">
+                </div>
+                <div class="contactDtlsFields contactDtlsFieldsHalfCol">
+                    <input type="number" name="cvv" placeholder="CVV (123)">
+                </div>
+            <!--     <div class="space5"></div>
+                <div class="radioCols">
+                    <label for="paymentRdBtn2">
+                        <input type="radio" name="pay-with-cash" value="Cash On Delivery" id="paymentRdBtn2">
+                        <span></span>
+                        <div>Pay with cash</div>
+                    </label>
+                </div>              
+                <div class="space5"></div> -->
+               <!--  <div class="btn-default btn-rounded pull-left"><strong>AED 148</strong></div> -->
+                <button type="submit" class="btn-primary btn-rounded pull-right booking4">Next <i class="fa fa-arrow-circle-right"></i></button>
+            </div>
+            <!-- <form action="thankyou.html" method="post" class="bookingForm1">           	            	            </form> -->
+        </div>        
+    </div>
+
+
+  <!--======= MENU ======= -->
+    <div class="menuSectionBottom">
+        <ul>
+            <!-- <li><a href="/"><span><img src="images/menuIcon1.svg" alt=""></span><strong>Home</strong></a></li>
+            <li><a href="/my-account/"><span><img src="images/menuIcon2.svg" alt=""></span><strong>Account</strong></a></li>
+            <li><a href="/my-booking/"><span><img src="images/menuIcon3.svg" alt=""></span><strong>Bookings</strong></a></li> -->
+            <li><a href="#" class="MenuBtnMain panel-open" data-panel="left"><span><img src="images/menuIcon4.svg" alt=""></span><strong></strong></a></li>
+        </ul>
+    </div>
+
+    
+    </div>
+  </div>
+</div>
+</template>
+<script>
+  return {
+      on: {
+            pageInit: function () {
+            $$('#bookingProcessFourth .booking4').on('click', function (e) {
+
+              var payWithCard = $$("input[name='pay-with-card']:checked"). val();
+              var payWithCash = $$("input[name='pay-with-cash']:checked"). val();
+               //  console.log('clicks calls');
+               // console.log('payWithCard');
+               // console.log(payWithCard);
+
+               // console.log('payWithCash');
+               // console.log(payWithCash);
+               //  return false;
+
+              var cardNumber = $$('#bookingProcessFourth [name="card-number"]').val();
+              var expiryDate = $$('#bookingProcessFourth [name="expiry-date"]').val();
+              var cvv = $$('#bookingProcessFourth [name="cvv"]').val();
+
+              console.log(payWithCard, payWithCash, cardNumber, expiryDate, cvv);
+
+              window.localStorage.setItem("payWithCard", payWithCard);
+              window.localStorage.setItem("payWithCash", payWithCash);
+              window.localStorage.setItem("cardNumber", cardNumber);
+              window.localStorage.setItem("expiryDate", expiryDate);
+              window.localStorage.setItem("cvv", cvv);
+              // window.localStorage.setItem("amount", "100");
+
+              // app.dialog.alert('Hii');
+
+              app.preloader.show();
+              if(payWithCash == ""){
+                  app.dialog.alert('payWithCash Field required');
+                }
+                else{
+                 appointment();      
+                }        
+
+              app.preloader.hide();     
+                
+            });
+            }
+        }
+  }
+
+
+  
+</script>
+ <script type="text/javascript" src="js/xml2json.min.js"></script>
+<script type="text/javascript" src="js/telr_payment.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript">
+   app.initialize();
+</script>
+
+
+
+   

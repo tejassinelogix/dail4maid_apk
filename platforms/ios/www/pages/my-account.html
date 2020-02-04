@@ -1,0 +1,147 @@
+<template>
+<div class="page" data-name="my-account">
+  <!-- <div class="navbar">
+    <div class="navbar-inner sliding">
+      <div class="left">
+        <a href="#" class="link back">
+          <i class="icon icon-back"></i>
+          <span class="if-not-md">Back</span>
+        </a>
+      </div>
+      <div class="title">Booking</div>
+    </div>
+  </div> -->
+
+  <div class="headerSection">
+        <a href="#" class="goBackLink back"><i class="fa fa-angle-left"></i></a>
+        <div class="headerLogo"></div>
+    </div>
+  <div class="page-content">
+
+    <div class="fullPageBlock">
+        <div class="fullPageBlockInner">
+            <h3 class="heading"><span>My Account</span></h3>
+            
+            
+            <div id="MyAccount">
+            <!-- <form action="booking-payment.html" method="post" class="bookingForm1"> -->
+              {{#each userData}}
+                <div class="contactDtlsFields">
+                    <img src="images/formIcon4.svg" alt="">
+                    <input type="text" readonly="" name="name" value="{{name}}">
+                </div>
+                <div class="contactDtlsFields">
+                    <i class="fa fa-envelope"></i>
+                    <input type="email" readonly="" name="email" value="{{email}}">
+                </div>
+                <div class="contactDtlsFields">
+                <img src="images/formIcon5.svg" alt="">                 
+                    <input type="number" name="contact" value="{{contact}}">
+                </div>
+                <div class="contactDtlsFields">
+                    <img src="images/formIcon1.svg" alt="">
+                    <input type="text" name="address" value="{{address}}">
+                </div>
+                <div class="contactDtlsFields">
+                    <img src="images/formIcon2.svg" alt="">
+                    <input type="text" name="city" value="{{city}}">
+                </div>
+                <div class="contactDtlsFields">
+                    <img src="images/formIcon3.svg" alt="">
+                    <input type="text" name="state" value="{{state}}">
+                </div>
+                <div class="contactDtlsFields">
+                    <img src="images/formIcon3.svg" alt="">
+                    <input type="text" name="country" value="{{country}}">
+                </div>
+                <div class="space5"></div>
+                <button type="submit" class="updateAccount btn-primary btn-rounded pull-right" id="updateAccount" name="updateAccount">Update Account<i class="fa fa-edit"></i></button>
+
+                {{/each}}
+            <!-- </form> -->
+            </div>
+        </div>        
+    </div>
+
+
+    <!--======= MENU ======= -->
+    <div class="menuSectionBottom">
+        <ul>
+            <!-- <li><a href="/"><span><img src="images/menuIcon1.svg" alt=""></span><strong>Home</strong></a></li>
+            <li><a href="/my-account/"><span><img src="images/menuIcon2.svg" alt=""></span><strong>Account</strong></a></li>
+            <li><a href="/my-booking/"><span><img src="images/menuIcon3.svg" alt=""></span><strong>Bookings</strong></a></li> -->
+            <li><a href="#" class="MenuBtnMain panel-open" data-panel="left"><span><img src="images/menuIcon4.svg" alt=""></span><strong></strong></a></li>
+        </ul>
+    </div>
+
+
+   </div>
+  </div>
+</div>
+</template>
+<script>
+  return {
+    on: {
+            pageInit: function () {
+            $$('#MyAccount .updateAccount').on('click', function (e) {
+
+              var name = $$('#MyAccount [name="name"]').val();
+              var email = $$('#MyAccount [name="email"]').val();
+              var contact = $$('#MyAccount [name="contact"]').val();              
+              var address = $$('#MyAccount [name="address"]').val();
+              var city = $$('#MyAccount [name="city"]').val();
+              var state = $$('#MyAccount [name="state"]').val();
+              var country = $$('#MyAccount [name="country"]').val();
+
+              window.localStorage.setItem("name", name);
+              window.localStorage.setItem("email", email);
+              window.localStorage.setItem("contact", contact);
+              window.localStorage.setItem("address", address);
+              window.localStorage.setItem("city", city);
+              window.localStorage.setItem("state", state);
+              window.localStorage.setItem("country", country);
+
+              console.log(city, country, state, address, email, name, contact);
+
+              // app.dialog.alert('hi');
+
+              app.preloader.show();
+
+
+              if(city == ""){
+                  app.dialog.alert('city Field required');
+                }
+                else if(country == "")
+                {
+                  app.dialog.alert('country Field required');
+                }
+                else if(state == "")
+                {
+                  app.dialog.alert('state Field required');
+                }
+                else if(address == ""){
+                  app.dialog.alert('address Field required');
+                }
+                else if(email == "")
+                {
+                  app.dialog.alert('email Field required');
+                }
+                else if(name == "")
+                {
+                  app.dialog.alert('name Field required');
+                }
+                else if(contact == "")
+                {
+                  app.dialog.alert('contact Field required');
+                }
+                else{
+                  update_account();   
+                }
+                 
+              app.preloader.hide();   
+
+            });
+            }
+        }
+  }
+</script>

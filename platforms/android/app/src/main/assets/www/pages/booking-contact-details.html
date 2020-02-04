@@ -1,0 +1,165 @@
+<template>
+<div class="page" data-name="my-account">
+<!--   <div class="navbar">
+    <div class="navbar-inner sliding">
+      <div class="left">
+        <a href="#" class="link back">
+          <i class="icon icon-back"></i>
+          <span class="if-not-md">Back</span>
+        </a>
+      </div>
+      <div class="title">Booking</div>
+    </div>
+  </div> -->
+
+  <div class="headerSection">
+        <a href="#" class="goBackLink back"><i class="fa fa-angle-left"></i></a>
+        <div class="headerLogo"></div>
+    </div>
+  <div class="page-content">
+
+    <div class="fullPageBlock">
+        <div class="fullPageBlockInner">
+            <!-- bookingProcess -->
+            <div class="bookingProcess">
+                <div class="bookingProcessCol">
+                    <div></div>
+                    <p><a href="/booking/">Cleaning Details</a></p>
+                </div>
+                <div class="bookingProcessCol">
+                    <div></div>
+                    <p><a href="/booking-date-time/">Date & Time</a></p>
+                </div>
+                <div class="bookingProcessCol bookingProcessColActive">
+                    <div><img src="images/check.svg"></div>
+                    <p><a href="/booking-contact-details/">Contact Details</a></p>
+                </div>
+                <div class="bookingProcessCol">
+                    <div></div>
+                    <p><a href="/booking-payment/">Payment</a></p>
+                </div>
+            </div>
+            <div id="bookingProcessThird">
+                <h3>Contact Information</h3>
+				{{#each userData}}
+                <div class="contactDtlsFields">
+                    <img src="images/formIcon1.svg" alt="">
+                    <select name="city">
+                        <option value="Select your City">Select your City</option>
+                        <option value="">Dubai</option>
+                        <option value="">Sharjah</option>
+                        <option value="">Abu Dhabi</option>
+                        <option value="">Ajman</option>
+                    </select>
+                </div>
+                <div class="contactDtlsFields">
+                    <img src="images/formIcon2.svg" alt="">
+					<input type="text" name="region" placeholder="Enter your Region" maxlength="20">
+                    <!--<select name="region">
+                        <option value="Select your region">Select your region</option>
+                        <option value="">Dubai</option>
+                        <option value="">Sharjah</option>
+                        <option value="">Abu Dhabi</option>
+                        <option value="">Ajman</option>
+                    </select>-->
+                </div>
+                <div class="contactDtlsFields">
+                    <img src="images/formIcon3.svg" alt="">
+                    <input type="text" name="address" placeholder="Enter your address details" value="{{address}}">
+                </div>
+                <div class="contactDtlsFields">
+                    <img src="images/formIcon4.svg" alt="">
+                    <input type="text" name="name" placeholder="Enter your full name" value="{{name}}">
+                </div>
+                <div class="contactDtlsFields">
+                    <img src="images/email.svg" alt="">
+                    <input type="text" name="email" placeholder="Enter your E-mail Address" value="{{email}}">
+                </div>
+                <div class="contactDtlsFields">
+                    <img src="images/formIcon5.svg" alt="">
+                    <input type="number" name="mobile" placeholder="Mobile Number" value="{{contact}}">
+                </div>
+                <div class="space5"></div>
+                <!-- <div class="btn-default btn-rounded pull-left"><strong>AED 148</strong></div> -->
+                <button type="submit" class="btn-primary btn-rounded pull-right booking3">Next <i class="fa fa-arrow-circle-right"></i></button>
+             {{/each}}
+			</div>
+
+            <!-- <form action="booking-payment.html" method="post" class="bookingForm1">
+            	           	                        	
+            </form> -->
+        </div>        
+    </div>
+
+
+    <!--======= MENU ======= -->
+    <div class="menuSectionBottom">
+        <ul>
+            <!-- <li><a href="/"><span><img src="images/menuIcon1.svg" alt=""></span><strong>Home</strong></a></li>
+            <li><a href="/my-account/"><span><img src="images/menuIcon2.svg" alt=""></span><strong>Account</strong></a></li>
+            <li><a href="/my-booking/"><span><img src="images/menuIcon3.svg" alt=""></span><strong>Bookings</strong></a></li> -->
+            <li><a href="#" class="MenuBtnMain panel-open" data-panel="left"><span><img src="images/menuIcon4.svg" alt=""></span><strong></strong></a></li>
+        </ul>
+    </div>
+
+
+   </div>
+  </div>
+</div>
+</template>
+<script>
+  return {
+      on: {
+            pageInit: function () {
+            $$('#bookingProcessThird .booking3').on('click', function (e) {
+              var city = $$('#bookingProcessThird [name="city"]').val();
+              var region = $$('#bookingProcessThird [name="region"]').val();
+              var address = $$('#bookingProcessThird [name="address"]').val();
+              var name = $$('#bookingProcessThird [name="name"]').val();
+              var email = $$('#bookingProcessThird [name="email"]').val();
+              var mobile = $$('#bookingProcessThird [name="mobile"]').val();
+
+
+              console.log(city, region, address, name, mobile);
+
+              window.localStorage.setItem("city", city);
+              window.localStorage.setItem("region", region);
+              window.localStorage.setItem("address", address);
+              window.localStorage.setItem("name", name);
+              window.localStorage.setItem("email", email);
+              window.localStorage.setItem("mobile", mobile);
+
+              // app.dialog.alert('Hii');
+
+               if(city == "Select your City"){
+                  app.dialog.alert('city Field required');
+                }
+                else if(region == "Select your region")
+                {
+                  app.dialog.alert('region Field required');
+                }
+                else if(address == "")
+                {
+                  app.dialog.alert('address Field required');
+                }
+                else if(name == "")
+                {
+                  app.dialog.alert('name Field required');
+                }
+                else if(email == "")
+                {
+                  app.dialog.alert('email Field required');
+                }
+                else if(mobile == "")
+                {
+                  app.dialog.alert('mobile Field required');
+                }
+                else{
+                  mainView.router.navigate("/booking-payment/");
+                }                   
+              
+            });
+            }
+        }
+  }
+</script>

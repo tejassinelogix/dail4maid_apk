@@ -1,0 +1,443 @@
+<template>
+<div class="page" data-name="appointment">
+  <!-- <div class="navbar">
+    <div class="navbar-inner sliding">
+      <div class="left">
+        <a href="#" class="link back">
+          <i class="icon icon-back"></i>
+          <span class="if-not-md">Back</span>
+        </a>
+      </div>
+      <div class="title">Booking</div>
+    </div>
+  </div> -->
+
+  <div class="headerSection">
+        <a href="#" class="goBackLink back"><i class="fa fa-angle-left"></i></a>
+        <div class="headerLogo"></div>
+    </div>
+  <div class="page-content">
+
+    <div class="fullPageBlock">
+        <div class="fullPageBlockInner">
+            <h3 class="heading"><span>Appointment</span></h3>
+            <div id="updateAppointment">
+            {{#each appointmentData}}
+            <div id="bookingProcessFirst">
+                <h3>How often do you need the cleaner?</h3>
+                <div class="radioCols">
+                    <label for="rdbtn">
+                        <input type="radio" name="cleaner-need" value="One-off" id="rdbtn" checked="checked">
+                        <span></span>
+                        <div>{{c_days}}</div>
+                    </label>
+                </div>
+                <div class="space5"></div>
+                <div class="radioCols">
+                    <label for="rdbtn1">
+                        <input type="radio" name="cleaner-need" value="One-off" id="rdbtn1">
+                        <span></span>
+                        <div>One-off</div>
+                    </label>
+                </div>
+                <div class="radioCols">
+                    <label for="rdbtn4">
+                        <input type="radio" name="cleaner-need" value="Every Day" id="rdbtn4">
+                        <span></span>
+                        <div>Every Day</div>
+                    </label>
+                </div>
+                <div class="radioCols">
+                    <label for="rdbtn2">
+                        <input type="radio" name="cleaner-need" value="Every two weeks" id="rdbtn2">
+                        <span></span>
+                        <div>Every two weeks</div>
+                    </label>
+                </div>
+                <div class="radioCols">
+                    <label for="rdbtn3">
+                        <input type="radio" name="cleaner-need" value="Every week" id="rdbtn3">
+                        <span></span>
+                        <div>Every week</div>
+                    </label>
+                </div>
+               
+                <div class="space5"></div>
+                <h4>How many cleaners do you need?</h4>
+                <div class="numbersRadioBtn">
+                    <label for="rd1btn">
+                        <input type="radio" name="cleaner-need-count" value="1" id="rd1btn" checked="checked">
+                        <span></span>
+                        <div>{{c_qty}}</div>
+                    </label>
+                    <div class="space5"></div>
+                    <label for="rd1btn1">
+                        <input type="radio" name="cleaner-need-count" value="1" id="rd1btn1" >
+                        <span></span>
+                        <div>1</div>
+                    </label>
+                    <label for="rd1btn2">
+                        <input type="radio" name="cleaner-need-count" value="2" id="rd1btn2">
+                        <span></span>
+                        <div>2</div>
+                    </label>
+                    <label for="rd1btn3">
+                        <input type="radio" name="cleaner-need-count" value="3" id="rd1btn3">
+                        <span></span>
+                        <div>3</div>
+                    </label>
+                    <label for="rd1btn4">
+                        <input type="radio" name="cleaner-need-count" value="4" id="rd1btn4">
+                        <span></span>
+                        <div>4</div>
+                    </label>
+                    
+                </div>
+                <div class="space5"></div>
+                <h4>Do you require cleaning materials?</h4>
+                <div class="inlineRadioBtns">
+                    <label for="inlineRdbtn">
+                        <input type="radio" name="cleaning-material"  value="Yes" id="inlineRdbtn" checked="checked">
+                        <span></span>
+                        <div>{{c_material}}</div>
+                    </label>
+                    <div class="space5"></div>
+                    <label for="inlineRdbtn1">
+                        <input type="radio" name="cleaning-material"  value="No" id="inlineRdbtn1" >
+                        <span></span>
+                        <div>No, I have them</div>
+                    </label>
+                    <label for="inlineRdbtn2">
+                        <input type="radio" name="cleaning-material"  value="Yes" id="inlineRdbtn2">
+                        <span></span>
+                        <div>Yes, please</div>
+                    </label>
+
+                </div>
+                <div class="space5"></div>
+                <h4>Do you have any speciﬁc cleaning instructions?</h4>
+                <textarea rows="3" name="instructions" placeholder="Speciﬁc requirements">{{c_instruction}}</textarea>
+                <div class="space5"></div>
+
+            </div>
+
+            <div id="bookingProcessSecond">
+                <h3>Date & Time</h3>
+                <h4>How long do you need your cleaner to stay (Hr) ?</h4>
+                <div class="numbersRadioBtn">
+                    <label for="rd2btn">
+                        <input type="radio" name="cleaner-stay" value="2" id="rd2btn" checked="checked">
+                        <span></span>
+                        <div>{{c_stay_hours}}</div>
+                    </label>
+                    <div class="space5"></div>
+                    <label for="rd2btn1">
+                        <input type="radio" name="cleaner-stay" value="2" id="rd2btn1" >
+                        <span></span>
+                        <div>2</div>
+                    </label>
+                    <label for="rd2btn2">
+                        <input type="radio" name="cleaner-stay" value="3" id="rd2btn2">
+                        <span></span>
+                        <div>3</div>
+                    </label>
+                    <label for="rd2btn3">
+                        <input type="radio" name="cleaner-stay" value="4" id="rd2btn3">
+                        <span></span>
+                        <div>4</div>
+                    </label>
+                    <label for="rd2btn4">
+                        <input type="radio" name="cleaner-stay" value="5" id="rd2btn4">
+                        <span></span>
+                        <div>5</div>
+                    </label>
+                    <label for="rd2btn5">
+                        <input type="radio" name="cleaner-stay" value="6" id="rd2btn5">
+                        <span></span>
+                        <div>6</div>
+                    </label>
+                    <label for="rd2btn6">
+                        <input type="radio" name="cleaner-stay" value="7" id="rd2btn6">
+                        <span></span>
+                        <div>7</div>
+                    </label>
+                    <label for="rd2btn7">
+                        <input type="radio" name="cleaner-stay" value="8" id="rd2btn7">
+                        <span></span>
+                        <div>8</div>
+                    </label>
+                </div>
+                <div class="space5"></div>
+                <h4>When would you like your cleaning?</h4>
+                <div class="inputFieldWhite">
+                 <h4>{{c_date}}</h4>
+                    <div class="inputFieldWhite">
+                        <input type="date" name="cleaning-date" placeholder="Select Date (mm/dd/yyyy)">
+                    </div>
+                </div>
+                <div class="space5"></div>
+                <h4>What time would you like us to start?</h4>
+                <div class="inputFieldWhite">
+                  <h4>{{c_from_time_slot}} - {{c_to_time_slot}}</h4>
+                    <div class="contactDtlsFields">
+                        <img src="images/clock.svg" alt="">
+                        <select name="from-cleaning-time">
+                        <option value="Select Time">From Select Time</option>
+                        <option value="">08:00 AM</option>
+                        <option value="">08:30 AM</option>
+                        <option value="">09:00 AM</option>
+                        <option value="">09:30 AM</option>
+                        <option value="">10:00 AM</option>
+                        <option value="">10:30 AM</option>
+                        <option value="">11:00 AM</option>
+                        <option value="">11:30 AM</option>
+                        <option value="">12:00 AM</option>
+                        <option value="">12:30 PM</option>
+                        <option value="">01:00 PM</option>
+                        <option value="">01:30 PM</option>
+                        <option value="">02:00 PM</option>
+                        <option value="">02:30 PM</option>
+                        <option value="">03:00 PM</option>
+                        <option value="">03:30 PM</option>
+                        <option value="">04:00 PM</option>
+                        <option value="">04:30 PM</option>
+                        <option value="">05:00 PM</option>
+                        <option value="">05:30 PM</option>
+                        <option value="">06:00 PM</option>
+                        <option value="">06:30 PM</option>
+                        <option value="">07:00 PM</option>
+                        <option value="">07:30 PM</option> 
+                        <option value="">08:00 PM</option>                         
+                    </select>
+                    </div>
+                    <!--<div class="contactDtlsFields">
+                    <img src="images/clock.svg" alt="">
+                    <select name="to-cleaning-time">
+                        <option value="Select Time">To Select Time</option>
+                        <option value="">08:00 AM</option>
+                        <option value="">08:30 AM</option>
+                        <option value="">09:00 AM</option>
+                        <option value="">09:30 AM</option>
+                        <option value="">10:00 AM</option>
+                        <option value="">10:30 AM</option>
+                        <option value="">11:00 AM</option>
+                        <option value="">11:30 AM</option>
+                        <option value="">12:00 AM</option>
+                        <option value="">12:30 PM</option>
+                        <option value="">01:00 PM</option>
+                        <option value="">01:30 PM</option>
+                        <option value="">02:00 PM</option>
+                        <option value="">02:30 PM</option>
+                        <option value="">03:00 PM</option>
+                        <option value="">03:30 PM</option>
+                        <option value="">04:00 PM</option>
+                        <option value="">04:30 PM</option>
+                        <option value="">05:00 PM</option>
+                        <option value="">05:30 PM</option>
+                        <option value="">06:00 PM</option>
+                        <option value="">06:30 PM</option>
+                        <option value="">07:00 PM</option>
+                        <option value="">07:30 PM</option> 
+                        <option value="">08:00 PM</option>                         
+                    </select>
+                </div>-->
+                    <!-- <div class="inputFieldWhite">
+                        <input type="time" name="cleaning-time" placeholder="Select Time">
+                    </div> -->
+                </div>
+                <div class="space5"></div>
+            </div>
+            <div id="bookingProcessThird">
+                <h3>Contact Information</h3>
+                <div class="contactDtlsFields">
+                    <h4><div>Region : {{region}}</div></h4>
+                </div>
+                <div class="contactDtlsFields">
+                    
+                    <img src="images/formIcon2.svg" alt="">
+                    <select name="region">
+                        <option value="Select your region">Select your region</option>
+                        <option value="">Dubai</option>
+                        <option value="">Sharjah</option>
+                        <option value="">Abu Dhabi</option>
+                        <option value="">Ajman</option>
+                    </select>
+                    
+                </div>
+                <div class="contactDtlsFields">
+                    <img src="images/formIcon3.svg" alt="">
+                    <!-- <div>Region : {{address}}</div> -->
+                    <input type="text" name="address" placeholder="Enter your address details" value="{{address}}">
+                </div>
+                <div class="contactDtlsFields">
+                    <img src="images/formIcon4.svg" alt="">
+                    <!-- <div>Name : {{name}}</div> -->
+                    <input type="text" name="name" placeholder="Enter your full name" value="{{name}}">
+                </div>
+                <div class="contactDtlsFields">
+                    <img src="images/formIcon4.svg" alt="">
+                    <!-- <div>Email : {{email}}</div> -->
+                    <input type="text" name="email" placeholder="Enter your E-mail Address" value="{{email}}">
+                </div>
+                <div class="contactDtlsFields">
+                    <img src="images/formIcon5.svg" alt="">
+                    <!-- <div>Contact : {{contact}}</div> -->
+                    <input type="number" name="mobile" placeholder="Mobile Number" value="{{contact}}">
+                </div>
+                <div class="space5"></div>
+                <input type="hidden" name="apt_id" value="{{id}}">
+                <input type="hidden" name="service_cat_id" value="{{service_cat_id}}">
+            </div>
+
+
+            <div id="bookingProcessFourth">
+                <h3>How would you like to pay?</h3>
+
+                <div class="space5"></div>
+                <div class="radioCols">
+                    <label for="paymentRdBtn2">
+                        <input type="radio" name="pay-with-cash" value="Cash On Delivery" id="paymentRdBtn2" checked="checked">
+                        <span></span>
+                        <div>{{pay_method}}</div>
+                    </label>
+                </div>              
+                <div class="space5"></div>
+                <div class="btn-default btn-rounded pull-left"><strong>AED {{amount}}</strong></div>
+            </div>
+            <button type="submit" class="updateAppointmentBtn btn-primary btn-rounded pull-right" id="booking1" name="booking1">Update Appointment <i class="fa fa-edit"></i></button>
+            {{/each}}
+            </div>
+        </div>        
+    </div>
+
+
+    <!--======= MENU ======= -->
+    <div class="menuSectionBottom">
+        <ul>
+            <!-- <li><a href="/"><span><img src="images/menuIcon1.svg" alt=""></span><strong>Home</strong></a></li>
+            <li><a href="/my-account/"><span><img src="images/menuIcon2.svg" alt=""></span><strong>Account</strong></a></li>
+            <li><a href="/my-booking/"><span><img src="images/menuIcon3.svg" alt=""></span><strong>Bookings</strong></a></li> -->
+            <li><a href="#" class="MenuBtnMain panel-open" data-panel="left"><span><img src="images/menuIcon4.svg" alt=""></span><strong></strong></a></li>
+        </ul>
+    </div>
+
+
+   </div>
+  </div>
+</div>
+</template>
+<script>
+  return {
+    on: {
+            pageInit: function () {
+            $$('#updateAppointment .updateAppointmentBtn').on('click', function (e) {
+              var cleanerNeed = $$("input[name='cleaner-need']:checked"). val();
+              var instructions = $$('#bookingProcessFirst [name="instructions"]').val();
+              var cleanerNeedCnt = $$("input[name='cleaner-need-count']:checked"). val();
+              var cleaningMaterial = $$("input[name='cleaning-material']:checked"). val();
+
+
+              var cleanerStay = $$("input[name='cleaner-stay']:checked"). val();
+              var cleaningDate = $$('#bookingProcessSecond [name="cleaning-date"]').val();
+              var fromCleaningTime = $$('#bookingProcessSecond [name="from-cleaning-time"]').val();
+              //var toCleaningTime = $$('#bookingProcessSecond [name="to-cleaning-time"]').val();
+
+              // var city = $$('#bookingProcessThird [name="city"]').val();
+              var region = $$('#bookingProcessThird [name="region"]').val();
+              var address = $$('#bookingProcessThird [name="address"]').val();
+              var name = $$('#bookingProcessThird [name="name"]').val();
+              var email = $$('#bookingProcessThird [name="email"]').val();
+              var mobile = $$('#bookingProcessThird [name="mobile"]').val();
+
+              var apt_id = $$('#bookingProcessThird [name="apt_id"]').val();
+              var service_cat_id = $$('#bookingProcessThird [name="service_cat_id"]').val();
+              var payWithCash = $$("input[name='pay-with-cash']:checked").val();
+                          
+              window.localStorage.setItem("cleanerNeed", cleanerNeed);
+              window.localStorage.setItem("cleanerNeedCnt", cleanerNeedCnt);
+              window.localStorage.setItem("cleaningMaterial", cleaningMaterial);
+              window.localStorage.setItem("instructions", instructions);
+             
+              window.localStorage.setItem("cleanerStay", cleanerStay);
+              window.localStorage.setItem("cleaningDate", cleaningDate);
+              window.localStorage.setItem("fromCleaningTime", fromCleaningTime);
+              //window.localStorage.setItem("toCleaningTime", toCleaningTime);
+              
+              // window.localStorage.setItem("city", city);
+              window.localStorage.setItem("region", region);
+              window.localStorage.setItem("address", address);
+              window.localStorage.setItem("name", name);
+              window.localStorage.setItem("email", email);
+              window.localStorage.setItem("mobile", mobile);
+
+              window.localStorage.setItem("apt_id", apt_id);
+              window.localStorage.setItem("service_cat_id", service_cat_id);
+              window.localStorage.setItem("payWithCash", payWithCash);
+
+              console.log(cleanerNeed, instructions, cleanerNeedCnt, cleaningMaterial);
+              console.log(cleanerStay, cleaningDate, fromCleaningTime);
+              console.log(region, address,email, name, mobile);
+              console.log(service_cat_id, apt_id, payWithCash);
+
+              app.preloader.show();
+
+              if(cleanerNeed == ""){
+                  app.dialog.alert('Email Field required');
+                }
+                else if(cleanerNeedCnt == "")
+                {
+                  app.dialog.alert('cleaner Need Field required');
+                }
+                else if(cleaningMaterial == "")
+                {
+                  app.dialog.alert('Cleaning Material Field required');
+                }
+                else if(cleanerStay == ""){
+                  app.dialog.alert('Cleaner Stay Field required');
+                }
+                else if(cleaningDate == "")
+                {
+                  app.dialog.alert('Cleaning Date Field required');
+                }
+                else if(fromCleaningTime == "Select Time")
+                {
+                  app.dialog.alert('From Cleaning Time Field required');
+                }
+               // else if(toCleaningTime == "Select Time")
+                //{
+                  //app.dialog.alert('To Cleaning Time Field required');
+                //}
+                else if(region == "Select your region")
+                {
+                  app.dialog.alert('region Field required');
+                }
+                else if(address == "")
+                {
+                  app.dialog.alert('address Field required');
+                }
+                else if(name == "")
+                {
+                  app.dialog.alert('name Field required');
+                }
+                else if(email == "")
+                {
+                  app.dialog.alert('email Field required');
+                }
+                else if(mobile == "")
+                {
+                  app.dialog.alert('mobile Field required');
+                }
+                else if(payWithCash == ""){
+                  app.dialog.alert('payWithCash Field required');
+                }
+                else{
+                  update_appointment();      
+                } 
+    
+              app.preloader.hide();   
+
+            });
+            }
+        }
+  }
+</script>
