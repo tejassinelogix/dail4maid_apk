@@ -4,8 +4,8 @@
   "name": "Dial4Maid",
   "short_name": "Dial4Maid",
   "version": "com.etcs.dialformaid",
-  "description": "A sample Apache Cordova application that responds to the deviceready event.",
-  "author": "Apache Cordova Team",
+  "description": "Dial4Maid - Maid booking app",
+  "author": "Dial4Maid",
   "icons": [
     {
       "src": "www/images/icon.png",

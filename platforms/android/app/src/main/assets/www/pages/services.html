@@ -27,14 +27,14 @@
             <h6>{{service_cat_name.en}}</h6>
 
             {{/each}} -->
-            <div id="servicesRow">
+            <div id="servicesRow">              
             {{#each servicesData}}
             <div class="myServicesRow">
               <div class="radioCols">
                 <label for="rdbtn{{service_cat_id}}">
                         <input type="radio" name="service_id" value="{{service_cat_id}}" id="rdbtn{{service_cat_id}}">        
                         <span></span>
-                        <div>{{service_cat_name.en}} - AED <strong>{{service_price}}</strong></div>
+                        <div>{{service_cat_name.en}}</div>
                 </label>
                 </div>     
                 <!--<a href="#" class="myServicesBlock">

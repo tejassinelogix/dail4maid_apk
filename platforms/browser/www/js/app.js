@@ -85,7 +85,7 @@ $$('#my-login-screen .login-button').on('click', function () {
   var email = $$('#my-login-screen [name="email"]').val();
   var password = $$('#my-login-screen [name="password"]').val();
 
-  app.preloader.show();
+  app.preloader.show('test','red');
 
   login(email,password);
 
