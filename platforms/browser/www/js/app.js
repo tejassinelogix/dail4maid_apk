@@ -81,7 +81,8 @@ var mainView = app.views.create('.view-main');
 
 // Login Screen Demo
 $$('#my-login-screen .login-button').on('click', function () {
-  
+  console.log('Test :: 1 :: #my-login-screen .login-button ');
+  // return false;
   var email = $$('#my-login-screen [name="email"]').val();
   var password = $$('#my-login-screen [name="password"]').val();
 
@@ -97,8 +98,8 @@ $$('#my-login-screen .login-button').on('click', function () {
 });
 
 $$('#logout-btn').on('click',function () {
-  app.dialog.alert("call logout-btn");
-  app.dialog.alert('hi');
+  // app.dialog.alert("call logout-btn");
+  // app.dialog.alert('hi');
   // navigator.app.exitApp() ;
   navigator.app.exitApp();
 });
@@ -125,7 +126,8 @@ app.request.post(
               var token = data.success.token.id;
               window.localStorage.setItem("userid", token); 
               window.localStorage.setItem("remember", data.success.token.remember);              			   
-              window.localStorage.setItem("remember", data.success.token.password);              			                 
+              window.localStorage.setItem("email", data.success.token.email);              			                 
+              window.localStorage.setItem("password", data.success.token.password);              			                 
               if(token){
                 mainView.router.navigate("/services/");
               }
