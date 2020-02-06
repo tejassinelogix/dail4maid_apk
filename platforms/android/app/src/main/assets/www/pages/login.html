@@ -1,65 +1,87 @@
 <template>
-<div class="page" data-name="login">
+  <div class="page" data-name="login">
 
-  <div class="headerSection">
-            <a href="#" class="goBackLink back"><i class="fa fa-angle-left"></i></a>
-            <div class="headerLogo"></div>
+    <div class="headerSection">
+      <a href="#" class="goBackLink back"><i class="fa fa-angle-left"></i></a>
+      <div class="headerLogo"></div>
+    </div>
+    <div class="page-content">
+
+      <div class="landingPage loginLandingPage">
+        <div class="landingPageBgCol">
+          <div class="landingPageBg" style="background: url(images/loginPageBg.jpg) no-repeat center;"></div>
         </div>
-  <div class="page-content">
-    
-    <div class="landingPage loginLandingPage">   
-          <div class="landingPageBgCol">
-              <div class="landingPageBg" style="background: url(images/loginPageBg.jpg) no-repeat center;"></div>
-          </div>
-          <div class="playBtnBlock">
-              <h3>Login</h3>
-          </div>
-          <div class="loginSection">
-              <div id="login-form">
-                  <div class="loginField">
-                      <img src="images/user.svg" alt="">
-                      <input type="email" name="email" placeholder="Your e-mail" required >
-                  </div>
-                  <div class="loginField">
-                      <img src="images/key.svg" alt="">
-                      <input type="password" name="password" placeholder="Password" required >
-                  </div>
-                  <button type="submit" class="signIn" id="signIn" name="signIn">Login <i class="fa fa-sign-in"></i></button>
-                 <!--  <span>OR</span>
+        <div class="playBtnBlock">
+          <h3>Login</h3>
+        </div>
+        <div class="loginSection">
+          <div id="login-form">
+            <div class="loginField">
+              <img src="images/user.svg" alt="">
+              <input type="email" name="email" placeholder="Your e-mail" required>
+            </div>
+            <div class="loginField">
+              <img src="images/key.svg" alt="">
+              <input type="password" name="password" placeholder="Password" required>
+            </div>
+            <div class="custom-control custom-checkbox">
+              <label for="paymentRdBtn1">
+                <input type='checkbox' name='rempwd_chkbx' id='rempwd_chkbx' value='0' unchecked="unchecked"> 
+              <label class="custom-control-label" for="customCheck1"><a href="#" style='color:white;'>Remember Me</label>
+              </label>                  
+            </div> <br> 
+            <button type="submit" class="signIn" id="signIn" name="signIn">Login <i class="fa fa-sign-in"></i></button>
+            <!--  <span>OR</span>
                   <a href="/request-and-load/user/123456/">Request Data & Load</a>
                   <button><a href="/signup/"><i class="fa fa-sign-up"></i> Sign Up</a></button> -->
-              </div>
           </div>
         </div>
-    
+      </div>
+
+    </div>
   </div>
-</div>
 </template>
 <script>
   return {
-      on: {
-            pageInit: function () {
-            $$('#login-form .signIn').on('click', function (e) {
-              var email = $$('#login-form [name="email"]').val();
-              var password = $$('#login-form [name="password"]').val();
-
-              app.preloader.show();
-
-              if(email == ""){
-                  app.dialog.alert('Email Field required');
-                }
-                else if(password == "")
-                {
-                  app.dialog.alert('Password Field required');
-                }
-                else{
-                  login(email,password);
-                }             
-              
-              // Close login screen
-              app.preloader.hide();
+    on: {
+      pageInit: function () {
+        $(document).on('change', '#rempwd_chkbx', function() {
+                  if($(this).is(':checked')){ // runtime check enable than return true
+                    console.log('checked')
+                      $(this).attr('checked','checked');
+                      $(this).removeAttr('unchecked','unchecked');
+                      $(this).val(1);
+                      // $(this).prop("checked", true); uncomment if below not work
+                  }else{ // runtime uncheck enable than return true
+                    console.log('un-checked')
+                      $(this).attr('unchecked','unchecked');
+                      $(this).removeAttr('checked','checked');
+                      $(this).val(0);
+                      // $(this).prop("unchecked", true); uncomment if below not work
+                  }
             });
-            }
-        }
+
+        $$('#login-form .signIn').on('click', function (e) {
+          var email = $$('#login-form [name="email"]').val();
+          var password = $$('#login-form [name="password"]').val();
+          var remember = $$('#login-form [name="rempwd_chkbx"]').val();
+
+          app.preloader.show();
+
+          if (email == "") {
+            app.dialog.alert('Email Field required');
+          }
+          else if (password == "") {
+            app.dialog.alert('Password Field required');
+          }
+          else {
+            login(email, password);
+          }
+
+          // Close login screen
+          app.preloader.hide();
+        });
+      }
+    }
   }
 </script>

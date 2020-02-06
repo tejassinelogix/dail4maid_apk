@@ -1,7 +1,7 @@
 var $$ = Dom7;
 var network = navigator.connection.type;
-var server = 'http://dfm.demosoftwares.biz/';
-// var server = 'http://34.93.248.210/';
+//var server = 'http://dfm.demosoftwares.biz/';
+var server = 'http://34.93.248.210/';
 
 var app = new Framework7({
   root: '#app', // App root element
@@ -112,19 +112,20 @@ $$('#signup-form .signup-btn').on('click', function () {
 });
 //-----------------Login Function--------------------------//
 
-function login(email, password) {
+function login(email, password, remember) {
 app.request.post(
         server+'api/login',
           {                            
             email,
             password,   
+            remember,   
           },
           function (data)
             {
               var token = data.success.token.id;
-			        window.localStorage.setItem("userid", token);
-			   
-              console.log(token);
+              window.localStorage.setItem("userid", token); 
+              window.localStorage.setItem("remember", data.success.token.remember);              			   
+              window.localStorage.setItem("remember", data.success.token.password);              			                 
               if(token){
                 mainView.router.navigate("/services/");
               }
