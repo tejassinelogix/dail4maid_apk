@@ -1,6 +1,6 @@
 <template>
-<div class="page" data-name="my-account">
-  <!-- <div class="navbar">
+    <div class="page" data-name="my-account">
+        <!-- <div class="navbar">
     <div class="navbar-inner sliding">
       <div class="left">
         <a href="#" class="link back">
@@ -12,211 +12,200 @@
     </div>
   </div> -->
 
-  <div class="headerSection">
-        <a href="#" class="goBackLink back"><i class="fa fa-angle-left"></i></a>
-        <div class="headerLogo"></div>
-    </div>
-  <div class="page-content">
+        <div class="headerSection">
+            <a href="#" class="goBackLink back"><i class="fa fa-angle-left"></i></a>
+            <div class="headerLogo"></div>
+        </div>
+        <div class="page-content">
 
-    <div class="fullPageBlock">
-        <div class="fullPageBlockInner">
-            <!-- bookingProcess -->
-            <div class="bookingProcess">
-                <div class="bookingProcessCol">
-                    <div></div>
-                    <p><a href="/booking/">Cleaning Details</a></p>
-                </div>
-                <div class="bookingProcessCol bookingProcessColActive">
-                    <div><img src="images/check.svg"></div>
-                    <p><a href="/booking-date-time/">Date & Time</a></p>
-                </div>
-                <div class="bookingProcessCol">
-                    <div></div>
-                    <p><a href="/booking-contact-details/">Contact Details</a></p>
-                </div>
-                <div class="bookingProcessCol">
-                    <div></div>
-                    <p><a href="/booking-payment/">Payment</a></p>
-                </div>
-            </div>
-            <div id="bookingProcessSecond">
-                <h3>Date & Time</h3>
-                <h4>How long do you need your cleaner to stay (Hr) ?</h4>
-                <div class="numbersRadioBtn">
-                    <label for="rd2btn1">
-                        <input type="radio" name="cleaner-stay" value="2" id="rd2btn1" checked="checked">
-                        <span></span>
-                        <div>2</div>
-                    </label>
-                    <label for="rd2btn2">
-                        <input type="radio" name="cleaner-stay" value="3" id="rd2btn2">
-                        <span></span>
-                        <div>3</div>
-                    </label>
-                    <label for="rd2btn3">
-                        <input type="radio" name="cleaner-stay" value="4" id="rd2btn3">
-                        <span></span>
-                        <div>4</div>
-                    </label>
-                    <label for="rd2btn4">
-                        <input type="radio" name="cleaner-stay" value="5" id="rd2btn4">
-                        <span></span>
-                        <div>5</div>
-                    </label>
-                    <label for="rd2btn5">
-                        <input type="radio" name="cleaner-stay" value="6" id="rd2btn5">
-                        <span></span>
-                        <div>6</div>
-                    </label>
-                    <label for="rd2btn6">
-                        <input type="radio" name="cleaner-stay" value="7" id="rd2btn6">
-                        <span></span>
-                        <div>7</div>
-                    </label>
-                    <label for="rd2btn7">
-                        <input type="radio" name="cleaner-stay" value="8" id="rd2btn7">
-                        <span></span>
-                        <div>8</div>
-                    </label>
-                </div>
-                <div class="space5"></div>
-                <h4>When would you like your cleaning?</h4>
-                <div class="inputFieldWhite">
-                    <input type="date" name="cleaning-date" placeholder="Select Date (mm/dd/yyyy)">
-                </div>
-                <div class="space5"></div>
-                <h4>What time would you like us to start?</h4>
-                <div class="contactDtlsFields">
-                    <img src="images/clock.svg" alt="">
-                    <select name="from-cleaning-time">
-                        <option value="Select Time">From Select Time</option>
-                        <option value="">08:00 AM</option>
-                        <option value="">08:30 AM</option>
-                        <option value="">09:00 AM</option>
-                        <option value="">09:30 AM</option>
-                        <option value="">10:00 AM</option>
-                        <option value="">10:30 AM</option>
-                        <option value="">11:00 AM</option>
-                        <option value="">11:30 AM</option>
-                        <option value="">12:00 AM</option>
-                        <option value="">12:30 PM</option>
-                        <option value="">01:00 PM</option>
-                        <option value="">01:30 PM</option>
-                        <option value="">02:00 PM</option>
-                        <option value="">02:30 PM</option>
-                        <option value="">03:00 PM</option>
-                        <option value="">03:30 PM</option>
-                        <option value="">04:00 PM</option>
-                        <option value="">04:30 PM</option>
-                        <option value="">05:00 PM</option>
-                        <option value="">05:30 PM</option>
-                        <option value="">06:00 PM</option>
-                        <option value="">06:30 PM</option>
-                        <option value="">07:00 PM</option>
-                        <option value="">07:30 PM</option> 
-                        <option value="">08:00 PM</option>                         
-                    </select>
-                </div>
-                <!--<div class="contactDtlsFields">
-                    <img src="images/clock.svg" alt="">
-                    <select name="to-cleaning-time">
-                        <option value="Select Time">To Select Time</option>
-                        <option value="">08:00 AM</option>
-                        <option value="">08:30 AM</option>
-                        <option value="">09:00 AM</option>
-                        <option value="">09:30 AM</option>
-                        <option value="">10:00 AM</option>
-                        <option value="">10:30 AM</option>
-                        <option value="">11:00 AM</option>
-                        <option value="">11:30 AM</option>
-                        <option value="">12:00 AM</option>
-                        <option value="">12:30 PM</option>
-                        <option value="">01:00 PM</option>
-                        <option value="">01:30 PM</option>
-                        <option value="">02:00 PM</option>
-                        <option value="">02:30 PM</option>
-                        <option value="">03:00 PM</option>
-                        <option value="">03:30 PM</option>
-                        <option value="">04:00 PM</option>
-                        <option value="">04:30 PM</option>
-                        <option value="">05:00 PM</option>
-                        <option value="">05:30 PM</option>
-                        <option value="">06:00 PM</option>
-                        <option value="">06:30 PM</option>
-                        <option value="">07:00 PM</option>
-                        <option value="">07:30 PM</option> 
-                        <option value="">08:00 PM</option>                         
-                    </select>
-                </div>-->
+            <div class="fullPageBlock">
+                <div class="fullPageBlockInner">
+                    <!-- bookingProcess -->
+                    <div class="bookingProcess">
+                        <div class="bookingProcessCol">
+                            <div></div>
+                            <p><a href="/booking/">Cleaning Details</a></p>
+                        </div>
+                        <div class="bookingProcessCol bookingProcessColActive">
+                            <div><img src="images/check.svg"></div>
+                            <p><a href="/booking-date-time/">Date & Time</a></p>
+                        </div>
+                        <div class="bookingProcessCol">
+                            <div></div>
+                            <p><a href="/booking-contact-details/">Contact Details</a></p>
+                        </div>
+                        <div class="bookingProcessCol">
+                            <div></div>
+                            <p><a href="/booking-payment/">Payment</a></p>
+                        </div>
+                    </div>
+                    <div id="bookingProcessSecond">
+                        <h3>Date & Time</h3>
+                        <h4>How long do you need your cleaner to stay (Hr) ?</h4>
+                        <div class="numbersRadioBtn">
+                            <label for="rd2btn1">
+                                <input type="radio" name="cleaner-stay" value="2" id="rd2btn1" checked="checked">
+                                <span></span>
+                                <div>2</div>
+                            </label>
+                            <label for="rd2btn2">
+                                <input type="radio" name="cleaner-stay" value="3" id="rd2btn2">
+                                <span></span>
+                                <div>3</div>
+                            </label>
+                            <label for="rd2btn3">
+                                <input type="radio" name="cleaner-stay" value="4" id="rd2btn3">
+                                <span></span>
+                                <div>4</div>
+                            </label>
+                            <label for="rd2btn4">
+                                <input type="radio" name="cleaner-stay" value="5" id="rd2btn4">
+                                <span></span>
+                                <div>5</div>
+                            </label>
+                            <label for="rd2btn5">
+                                <input type="radio" name="cleaner-stay" value="6" id="rd2btn5">
+                                <span></span>
+                                <div>6</div>
+                            </label>
+                            <label for="rd2btn6">
+                                <input type="radio" name="cleaner-stay" value="7" id="rd2btn6">
+                                <span></span>
+                                <div>7</div>
+                            </label>
+                            <label for="rd2btn7">
+                                <input type="radio" name="cleaner-stay" value="8" id="rd2btn7">
+                                <span></span>
+                                <div>8</div>
+                            </label>
+                        </div>
+                        <div class="space5"></div>
+                        <h4>When would you like your cleaning?</h4>
+                        <div class="inputFieldWhite">
+                            <input type="date" name="cleaning-date" placeholder="Select Date (mm/dd/yyyy)">
+                        </div>
+                        <div class="space5"></div>
+                        <h4>What time would you like us to start?</h4>
+                        <div class="contactDtlsFields">
+                            <img src="images/clock.svg" alt="" class="select_clean">
+                            <select name="from-cleaning-time" class="select_time">
+                                <option value="Select Time">From Select Time</option>
+                                <option value="">08:00 AM</option>
+                                <option value="">08:30 AM</option>
+                                <option value="">09:00 AM</option>
+                                <option value="">09:30 AM</option>
+                                <option value="">10:00 AM</option>
+                                <option value="">10:30 AM</option>
+                                <option value="">11:00 AM</option>
+                                <option value="">11:30 AM</option>
+                                <option value="">12:00 AM</option>
+                                <option value="">12:30 PM</option>
+                                <option value="">01:00 PM</option>
+                                <option value="">01:30 PM</option>
+                                <option value="">02:00 PM</option>
+                                <option value="">02:30 PM</option>
+                                <option value="">03:00 PM</option>
+                                <option value="">03:30 PM</option>
+                                <option value="">04:00 PM</option>
+                                <option value="">04:30 PM</option>
+                                <option value="">05:00 PM</option>
+                                <option value="">05:30 PM</option>
+                                <option value="">06:00 PM</option>
+                                <option value="">06:30 PM</option>
+                                <option value="">07:00 PM</option>
+                                <option value="">07:30 PM</option>
+                                <option value="">08:00 PM</option>
+                            </select>
+                        </div>
 
-                <!-- <div class="inputFieldWhite">
+                        <!-- <div class="inputFieldWhite">
                     <input type="time" name="cleaning-time" placeholder="Select Time">
                 </div> -->
-                <div class="space5"></div>
-                <!-- <div class="btn-default btn-rounded pull-left"><strong>AED 148</strong></div> -->
-                <button type="submit" class="booking2 btn-primary btn-rounded pull-right">Next <i class="fa fa-arrow-circle-right"></i></button>
-            </div>
-            <!-- <form action="booking-contact-details.html" method="post" class="bookingForm1">           	
+                        <div class="space5"></div>
+                        <!-- <div class="btn-default btn-rounded pull-left"><strong>AED 148</strong></div> -->
+                        <button type="submit" class="booking2 btn-primary btn-rounded pull-right">Next <i
+                                class="fa fa-arrow-circle-right"></i></button>
+                    </div>
+                    <!-- <form action="booking-contact-details.html" method="post" class="bookingForm1">           	
             	
             </form> -->
-        </div>        
-    </div>
+                </div>
+            </div>
 
 
-    <!--======= MENU ======= -->
-    <div class="menuSectionBottom">
-        <ul>
-            <!-- <li><a href="/"><span><img src="images/menuIcon1.svg" alt=""></span><strong>Home</strong></a></li>
+            <!--======= MENU ======= -->
+            <div class="menuSectionBottom">
+                <ul>
+                    <!-- <li><a href="/"><span><img src="images/menuIcon1.svg" alt=""></span><strong>Home</strong></a></li>
             <li><a href="/my-account/"><span><img src="images/menuIcon2.svg" alt=""></span><strong>Account</strong></a></li>
             <li><a href="/my-booking/"><span><img src="images/menuIcon3.svg" alt=""></span><strong>Bookings</strong></a></li> -->
-            <li><a href="/" class="MenuBtnMain panel-open" data-panel="left"><span><img src="images/menuIcon4.svg" alt=""></span><strong></strong></a></li>
-        </ul>
+                    <li><a href="/" class="MenuBtnMain panel-open" data-panel="left"><span><img
+                                    src="images/menuIcon4.svg" alt=""></span><strong></strong></a></li>
+                </ul>
+            </div>
+
+
+        </div>
     </div>
-
-
-   </div>
-  </div>
-</div>
+    </div>
 </template>
 <script>
-  return {
-      on: {
+    return {
+        on: {
             pageInit: function () {
-            $$('#bookingProcessSecond .booking2').on('click', function (e) {
-              var cleanerStay = $$("input[name='cleaner-stay']:checked"). val();
-              var cleaningDate = $$('#bookingProcessSecond [name="cleaning-date"]').val();
-              var fromCleaningTime = $$('#bookingProcessSecond [name="from-cleaning-time"]').val();
-             // var toCleaningTime = $$('#bookingProcessSecond [name="to-cleaning-time"]').val();
-
-              console.log(cleanerStay, cleaningDate, fromCleaningTime);
-
-              window.localStorage.setItem("cleanerStay", cleanerStay);
-              window.localStorage.setItem("cleaningDate", cleaningDate);
-              window.localStorage.setItem("fromCleaningTime", fromCleaningTime);
-             // window.localStorage.setItem("toCleaningTime", toCleaningTime);
-              // app.dialog.alert('Hii');
-              
-              if(cleanerStay == ""){
-                  app.dialog.alert('Cleaner Stay Field required');
-                }
-                else if(cleaningDate == "")
-                {
-                  app.dialog.alert('Cleaning Date Field required');
-                }
-                else if(fromCleaningTime == "Select Time")
-                {
-                  app.dialog.alert('From Cleaning Time Field required');
-                }
-                //else if(toCleaningTime == "Select Time")
-               // {
-                 // app.dialog.alert('To Cleaning Time Field required');
-                //}
-                else{
-                  mainView.router.navigate("/booking-contact-details/");
-                }      
-              
+                $('.select_time').change(function(){ 
+                // alert($(this).val());
+                // alert($(this).find('option:selected').text())
             });
+                $$('.select_clean').on('click', function (e) {
+
+                    $('.select_time').trigger('change');
+                    // var size = $('.select_time option').size();
+                    // if (size != $(".select_time").prop('size')) {
+                    //     $(".select_time").prop('size', size);
+                    //     smartSelect.open()
+                    //     // $(".select_time").addClass('input-with-value input-focused active-state');
+                    //     // $('.select_time').css({'height':'auto','background':'#fff'});
+                    // }
+                    // else {
+                    //     console.log('else')
+                    //     $(".select_time").prop('size', 1);                        
+                    // }
+                });
+
+                $$('#bookingProcessSecond .booking2').on('click', function (e) {
+                    var cleanerStay = $$("input[name='cleaner-stay']:checked").val();
+                    var cleaningDate = $$('#bookingProcessSecond [name="cleaning-date"]').val();
+                    var fromCleaningTime = $$('#bookingProcessSecond [name="from-cleaning-time"]').val();
+                    // var toCleaningTime = $$('#bookingProcessSecond [name="to-cleaning-time"]').val();
+
+                    console.log(cleanerStay, cleaningDate, fromCleaningTime);
+
+                    window.localStorage.setItem("cleanerStay", cleanerStay);
+                    window.localStorage.setItem("cleaningDate", cleaningDate);
+                    window.localStorage.setItem("fromCleaningTime", fromCleaningTime);
+                    // window.localStorage.setItem("toCleaningTime", toCleaningTime);
+                    // app.dialog.alert('Hii');
+
+                    if (cleanerStay == "") {
+                        app.dialog.alert('Cleaner Stay Field required');
+                    }
+                    else if (cleaningDate == "") {
+                        app.dialog.alert('Cleaning Date Field required');
+                    }
+                    else if (fromCleaningTime == "Select Time") {
+                        app.dialog.alert('From Cleaning Time Field required');
+                    }
+                    //else if(toCleaningTime == "Select Time")
+                    // {
+                    // app.dialog.alert('To Cleaning Time Field required');
+                    //}
+                    else {
+                        mainView.router.navigate("/booking-contact-details/");
+                    }
+
+                });
             }
         }
-  }
+    }
 </script>

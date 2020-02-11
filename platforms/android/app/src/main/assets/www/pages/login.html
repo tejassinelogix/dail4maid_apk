@@ -6,36 +6,64 @@
       <div class="headerLogo"></div>
     </div>
     <div class="page-content">
-
+      
       <div class="landingPage loginLandingPage">
         <div class="landingPageBgCol">
           <div class="landingPageBg" style="background: url(images/loginPageBg.jpg) no-repeat center;"></div>
         </div>
         <div class="playBtnBlock">
-          <h3>Login</h3>
-        </div>
+          <h3>Login </h3>
+        </div>        
+        {{#if remember_get}} 
+        
         <div class="loginSection">
           <div id="login-form">
             <div class="loginField">
-              <img src="images/user.svg" alt="">
-              <input type="email" name="email" placeholder="Your e-mail" required>
+               
+              <img src="images/user.svg" alt="">              
+              <input type="email" name="email" placeholder="Your e-mail" value="{{email_get}}" required>
             </div>
-            <div class="loginField">
+            <div class="loginField" 	style='display:none;'>
               <img src="images/key.svg" alt="">
-              <input type="password" name="password" placeholder="Password" required>
+              <input type="password" name="password" placeholder="Password" value="{{password_get}}" required>
             </div>
-            <div class="custom-control custom-checkbox">
-              <label for="paymentRdBtn1">
-                <input type='checkbox' name='rempwd_chkbx' id='rempwd_chkbx' value='0' unchecked="unchecked"> 
-              <label class="custom-control-label" for="customCheck1"><a href="#" style='color:white;'>Remember Me</label>
+            <div class="loginField">              
+              <a href="#" style='color:white;'>Login Into Another Account
               </label>                  
-            </div> <br> 
+            </div> 
+
             <button type="submit" class="signIn" id="signIn" name="signIn">Login <i class="fa fa-sign-in"></i></button>
             <!--  <span>OR</span>
                   <a href="/request-and-load/user/123456/">Request Data & Load</a>
                   <button><a href="/signup/"><i class="fa fa-sign-up"></i> Sign Up</a></button> -->
           </div>
         </div>
+      
+        {{else}}        
+        <div class="loginSection">
+            <div id="login-form">
+              <div class="loginField">
+                 
+                <img src="images/user.svg" alt="">
+                <input type="email" name="email" placeholder="Your e-mail" value=""required>
+              </div>
+              <div class="loginField">
+                <img src="images/key.svg" alt="">
+                <input type="password" name="password" placeholder="Password" required>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <label for="paymentRdBtn1">
+                  <input type='checkbox' name='rempwd_chkbx' id='rempwd_chkbx' value='0' unchecked="unchecked"> 
+                <label class="custom-control-label" for="customCheck1"><a href="#" style='color:white;'>Remember Me</label>
+                </label>                  
+              </div> <br> 
+              <button type="submit" class="signIn" id="signIn" name="signIn">Login <i class="fa fa-sign-in"></i></button>
+              <!--  <span>OR</span>
+                    <a href="/request-and-load/user/123456/">Request Data & Load</a>
+                    <button><a href="/signup/"><i class="fa fa-sign-up"></i> Sign Up</a></button> -->
+            </div>
+          </div>
+        {{/if}}
       </div>
 
     </div>
@@ -75,7 +103,7 @@
             app.dialog.alert('Password Field required');
           }
           else {
-            login(email, password);
+            login(email, password,remember);
           }
 
           // Close login screen

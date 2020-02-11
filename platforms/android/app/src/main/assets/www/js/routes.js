@@ -253,10 +253,13 @@ var routes = [
       var router = this;
       // App instance
       var app = router.app;
-
+      var remember_get = window.localStorage.getItem("remember");
+      var email_get = window.localStorage.getItem("email");
+      var password_get = window.localStorage.getItem("password");
       // Show Preloader
       app.preloader.show();
 
+      
       // Simulate Ajax Request
       setTimeout(function () {
         // Hide Preloader
@@ -267,6 +270,13 @@ var routes = [
           {
             componentUrl: './pages/login.html',
           },
+          {
+            context: {
+              remember_get: false,
+              email_get: email_get,
+              password_get: password_get,
+            }
+          }
         );
       }, 1000);
     },
